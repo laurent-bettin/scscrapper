@@ -9,7 +9,7 @@
 3) Usage
 --------
 
-.. code-block:: bash
+```bash
 
     python path/to/scscrapper.py Username
 
@@ -21,8 +21,7 @@ A file named sc-collection.json in same folder than script.
 5) JSON schema
 --------------
 
-.. code-block:: python
-
+```python
     sub_categorie = {
         "type": "array",
         "items" : {
