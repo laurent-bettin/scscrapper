@@ -9,8 +9,8 @@
 3) Usage
 --------
 
-```bash
-    python path/to/scscrapper.py Username
+```
+python path/to/scscrapper.py Username
 ```
 
 4) Output
@@ -22,49 +22,49 @@ A file named sc-collection.json in same folder than script.
 --------------
 
 ```python
-    sub_categorie = {
-        "type": "array",
-        "items" : {
-            "type" : "object",
-            "properties": {
-                "title" : {
+sub_categorie = {
+    "type": "array",
+    "items" : {
+        "type" : "object",
+        "properties": {
+            "title" : {
+                "type": "string"
+            },
+            "originalTitle" : {
+                "type": "string"
+            },
+            "year" : {
+                "type": "string"
+            },
+            "authors" : {
+                "type": "array",
+                "items" : {
                     "type": "string"
-                },
-                "originalTitle" : {
-                    "type": "string"
-                },
-                "year" : {
-                    "type": "string"
-                },
-                "authors" : {
-                    "type": "array",
-                    "items" : {
-                        "type": "string"
-                    }
                 }
             }
         }
     }
+}
 
-    categorie = {
-        "type" : "object",
-        "properties": {
-            "wish": sub_categorie,
-            "rating": sub_categorie,
-            "shopping": sub_categorie
-        }
+categorie = {
+    "type" : "object",
+    "properties": {
+        "wish": sub_categorie,
+        "rating": sub_categorie,
+        "shopping": sub_categorie
     }
+}
 
-    collection = { "type": "object",
-        "properties": {
-            "films": categorie,
-            "bd": categorie,
-            "series": categorie,
-            "livres": categorie,
-            "jeuxvideo": categorie,
-            "musique": categorie
-        }
+collection = { "type": "object",
+    "properties": {
+        "films": categorie,
+        "bd": categorie,
+        "series": categorie,
+        "livres": categorie,
+        "jeuxvideo": categorie,
+        "musique": categorie
     }
+}
 ```
 
 [1]: http://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup
