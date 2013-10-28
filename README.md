@@ -10,8 +10,8 @@
 --------
 
 ```bash
-
     python path/to/scscrapper.py Username
+```
 
 4) Output
 ---------
@@ -65,6 +65,7 @@ A file named sc-collection.json in same folder than script.
             "musique": categorie
         }
     }
+```
 
 [1]: http://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup
 [2]: https://github.com/kennethreitz/requests
