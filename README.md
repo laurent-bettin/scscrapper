@@ -1,4 +1,4 @@
-2) Requirement
+1) Requirement
 --------------
 
 * Python 3.3
@@ -8,14 +8,14 @@
 
 validate.py require [validictory][4]
 
-3) Usage
+2) Usage
 --------
 
 ```
 python path/to/scscrapper.py Username
 ```
 
-4) Output
+3) Output
 ---------
 
 A file named sc-collection.json in same folder than script.
