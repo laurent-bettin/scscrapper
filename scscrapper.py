@@ -113,7 +113,6 @@ def main():
             collection[category][k] = []
             page_url = v
             while page_url:
-                print(page_url)
                 content = get_page_content(base_url+page_url)
                 get_and_format_data(content, collection[category][k], json_keys)
                 page_url = get_next_page(content)
