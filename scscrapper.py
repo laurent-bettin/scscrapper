@@ -99,10 +99,8 @@ def main():
     json_keys = ('title', 'original_title', 'authors', 'year')
     base_url = 'http://www.senscritique.com'
     char_encoding = 'UTF-8'
-    #category = ('films', 'bd', 'series', 'jeuxvideo', 'musique')
-    #sub_category = ('wish', 'rating', 'shopping')
-    categories = ('films', )
-    sub_categories = ('wish', )
+    categories = ('films', 'bd', 'series', 'jeuxvideo', 'musique')
+    sub_categories = ('wish', 'rating', 'shopping')
 
     user  = get_param(sys.argv)
     urls  = get_urls_list(user, categories, sub_categories)
