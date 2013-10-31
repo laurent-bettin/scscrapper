@@ -47,8 +47,9 @@ def get_original_title(bs_item):
 
 def get_title(bs_item):
     h2 = bs_item.find('h2', 'elco-title')
-    if h2.a is not None:
-        return str(h2.a.string.strip())
+    if h2 is not None:
+        if h2.a is not None:
+            return str(h2.a.string.strip())
     return ''
 
 def extract_date(bs_item):
