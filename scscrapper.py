@@ -35,7 +35,8 @@ def get_urls_list(user_name, categories_keys, sub_categories_keys):
 #list item generator
 def get_item(bs_item):
     items = bs_item.find_all('li')
-    if items is None:
+    empty = bs_item.find('li', class_='d-emptyMessage')
+    if items is None or empty:
         items = []
     yield from items #http://docs.python.org/3/whatsnew/3.3.html#pep-380
 
