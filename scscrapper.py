@@ -1,4 +1,5 @@
 import sys
+import time
 import json
 import requests
 from bs4 import BeautifulSoup
@@ -113,6 +114,7 @@ def main():
             collection[category][k] = []
             page_url = v
             while page_url:
+                time.sleep(1)
                 content = get_page_content(base_url+page_url)
                 get_and_format_data(content, collection[category][k], json_keys)
                 page_url = get_next_page(content)
