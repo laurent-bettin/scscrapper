@@ -1,0 +1,6 @@
+beautifulsoup4==4.3.2
+distribute==0.6.49
+html5lib==0.99
+requests==2.0.0
+six==1.4.1
+validictory==0.9.1
