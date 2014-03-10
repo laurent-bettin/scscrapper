@@ -118,7 +118,7 @@ def main():
                 content = get_page_content(base_url+page_url)
                 get_and_format_data(content, collection[category][k], json_keys)
                 page_url = get_next_page(content)
-    with open('sc-collection.json', 'w', encoding = char_encoding) as output:
+    with open('sc-collection.json', 'w', encoding=char_encoding) as output:
         output.write(json.dumps(collection, ensure_ascii=False, indent=4, separators=(',', ': ')))
 
 if __name__ == '__main__':
