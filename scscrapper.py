@@ -107,16 +107,15 @@ def main():
     urls  = get_urls_list(user, categories, sub_categories)
     collection = {}
 
-    for category in categories:
-        collection[category] = {}
-        sub_cat = urls[category]
+    for cat, sub_cat in urls.items():
+        collection[cat] = {}
         for k, v in sub_cat.items():
-            collection[category][k] = []
+            collection[cat][k] = []
             page_url = v
             while page_url:
                 time.sleep(1)
                 content = get_page_content(base_url+page_url)
-                get_and_format_data(content, collection[category][k], json_keys)
+                get_and_format_data(content, collection[cat][k], json_keys)
                 page_url = get_next_page(content)
     with open('sc-collection.json', 'w', encoding=char_encoding) as output:
         output.write(json.dumps(collection, ensure_ascii=False, indent=4, separators=(',', ': ')))
