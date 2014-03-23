@@ -23,13 +23,13 @@ def get_urls_list(user_name, categories_keys, sub_categories_keys):
             }
         }
     '''
+
     urls_list = {}
     for c in categories_keys:
-        url = []
-        for sc in sub_categories_keys:
-            url.append((sc, '/{0}/collection/{1}/{2}'.format(user_name, sc, c)))
         #dict([('A', 1), ('B', 2)]) => {'A': 1, 'B': 2}
-        urls_list[c] = dict(url)
+        urls_list[c] = dict(
+            [(sc, '/{0}/collection/{1}/{2}'.format(user_name, sc, c)) for sc in sub_categories_keys]
+        )
     return urls_list
 
 #list item generator
