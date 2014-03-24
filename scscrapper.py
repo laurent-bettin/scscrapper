@@ -84,7 +84,7 @@ def get_page_content(url):
         sys.exit(e)
     return BeautifulSoup(r.content, 'html5lib')
 
-def get_and_format_data(bs_item, data_collection, keys):
+def get_and_format_data(bs_item):
     list_item = bs_item.find('ul', 'elco-collection-list')
     if list_item is not None:
         li_items = get_item(list_item)
@@ -94,7 +94,7 @@ def get_and_format_data(bs_item, data_collection, keys):
             datas.append(get_original_title(li))
             datas.append(get_authors(li))
             datas.append(extract_date(li))
-            data_collection.append(dict(zip(keys, datas)))
+            yield datas
 
 def main():
     json_keys = ('title', 'original_title', 'authors', 'year')
@@ -115,7 +115,7 @@ def main():
             while page_url:
                 time.sleep(1)
                 content = get_page_content(base_url+page_url)
-                get_and_format_data(content, collection[cat][k], json_keys)
+                collection[cat][k] = [dict(zip(json_keys, datas)) for datas in get_and_format_data(content)]
                 page_url = get_next_page(content)
     with open('sc-collection.json', 'w', encoding=char_encoding) as output:
         output.write(json.dumps(collection, ensure_ascii=False, indent=4, separators=(',', ': ')))
