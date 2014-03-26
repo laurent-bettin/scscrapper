@@ -110,7 +110,6 @@ def main():
     for cat, sub_cat in urls.items():
         collection[cat] = {}
         for k, v in sub_cat.items():
-            collection[cat][k] = []
             page_url = v
             while page_url:
                 time.sleep(1)
